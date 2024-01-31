@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>药物提醒器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="reminder-container">
+        <h1>药物提醒器</h1>
+
+        <!-- 用户选择 -->
+        <div class="user-selection">
+            <label for="userSelect">选择用户:</label>
+            <select id="userSelect">
+                <option value="用户1">用户1</option>
+                <option value="用户2">用户2</option>
+                <option value="用户3">用户3</option>
+            </select>
+        </div>
+
+        <!-- 药物选择 -->
+        <div class="medicine-selection">
+            <label for="medicineSelect">选择药物:</label>
+            <select id="medicineSelect">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+        </div>
+
+        <!-- 时间输入 -->
+        <div class="time-input">
+            <input type="time" id="timeInput" placeholder="提醒时间">
+            <button id="setReminderBtn">设置提醒</button>
+        </div>
+
+        <!-- 提醒显示 -->
+        <div class="reminder-display" id="reminderDisplay">请设置提醒...</div>
+
+        <!-- 倒计时显示 -->
+        <div class="countdown-display" id="countdownDisplay"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
