@@ -62,29 +62,14 @@ function setReminder() {
 // Clock Update Function
 function updateClock() {
     const now = new Date();
-    const seconds = now.getSeconds();
-    const minutes = now.getMinutes();
-    const hours = now.getHours();
-
-    const secondHand = document.getElementById('secondHand');
-    const minuteHand = document.getElementById('minuteHand');
-    const hourHand = document.getElementById('hourHand');
-    const digitalClock = document.getElementById('digitalClock');
-
-    const secondsFraction = seconds / 60;
-    const minutesFraction = (secondsFraction + minutes) / 60;
-    const hoursFraction = (minutesFraction + hours % 12) / 12;
-
-    const secondsRotation = secondsFraction * 360;
-    const minutesRotation = minutesFraction * 360;
-    const hoursRotation = hoursFraction * 360;
-
-    secondHand.style.transform = `rotate(${secondsRotation}deg)`;
-    minuteHand.style.transform = `rotate(${minutesRotation}deg)`;
-    hourHand.style.transform = `rotate(${hoursRotation}deg)`;
-
-    digitalClock.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
 }
 
+// Call updateClock every second
 setInterval(updateClock, 1000);
+
+// Call once on initial load
 updateClock();
